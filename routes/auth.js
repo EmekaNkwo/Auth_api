@@ -11,8 +11,9 @@ router.post("/register", async (req, res) => {
   try {
     const savedUser = await user.save();
     res.send(savedUser);
-  } catch (error) {
-    res.status(400).send(err);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: err.stack });
   }
 });
 

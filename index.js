@@ -9,7 +9,16 @@ const authRoute = require("./routes/auth");
 dotenv.config();
 
 //connecting to db
-mongoose.connect(process.env.DB_CONNECT, () => console.log("DB connected"));
+//Download and connect Mongo LocalHost database
+//DB_CONNECT=mongodb://localhost:27017/authdb in env file
+
+mongoose.connect(
+  process.env.DB_CONNECT,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("DB Connected");
+  }
+);
 
 //Middlewares
 app.use(express.json());
