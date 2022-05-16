@@ -5,13 +5,12 @@ const registerValidation = () => {
   const schema = Joi.object({
     email: Joi.string().min(6).required().email,
     password: Joi.string().min(6).required(),
-    confirm_password: Joi.ref("password"),
+    confirm_password: Joi.string().min(6).required(),
   });
-  return schema.validate({});
+  return schema.validate();
 };
 
 //Login Validation with Joi
-
 const loginValidation = () => {
   const schema = Joi.object({
     email: Joi.string().min(6).required().email,
