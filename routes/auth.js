@@ -18,9 +18,6 @@ router.post("/register", validateRegister, async (req, res) => {
     password: hashedPassword,
   });
 
-  // console.log(user);
-  // return;
-
   try {
     const savedUser = await user.save();
 
