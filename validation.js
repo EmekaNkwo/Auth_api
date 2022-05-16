@@ -1,23 +1,27 @@
 const Joi = require("@hapi/joi");
 
-//Register Validation
-const registerValidation = () => {
+//Register Validation with Joi
+const registerValidation = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().min(6).required().email,
     password: Joi.string().min(6).required(),
     confirm_password: Joi.ref("password"),
   });
-  return schema.validate();
+  const { error } = schema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+  next();
 };
 
-//Login Validation with Joi
-const loginValidation = () => {
+// Validate login with username and password with joi
+const validateLogin = (req, res, next) => {
   const schema = Joi.object({
-    email: Joi.string().min(6).required().email,
+    email: Joi.string().min(6).required().email(),
     password: Joi.string().min(6).required(),
   });
-  return schema.validate({});
+  const { error } = schema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+  next();
 };
 
 module.exports.registerValidation = registerValidation;
-module.exports.loginValidation = loginValidation;
+module.exports.validateLogin = validateLogin;
