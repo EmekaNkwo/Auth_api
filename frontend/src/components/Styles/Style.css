@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+body {
+  background-color: #e0e0e0 !important;
+  font-family: "Comfortaa", cursive !important;
+}
+
+.container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container-fluid .icon-details {
+  margin-bottom: 1.5rem;
+}
+
+.container-fluid .icon-details .icon {
+  font-size: 1.8rem;
+}
+
+.container-fluid form {
+  margin: 0 2rem;
+  padding: 1.6rem;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 13px;
+  background: #e0e0e0;
+  -webkit-box-shadow: 26px 26px 52px #bababa, -10px -10px 50px #ffffff;
+          box-shadow: 26px 26px 52px #bababa, -10px -10px 50px #ffffff;
+}
+
+.container-fluid form h3 {
+  margin: 0.5rem 0 1rem 0;
+  text-align: center;
+  color: #2b2b2b;
+}
+
+.container-fluid form label {
+  color: #2b2b2b;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.container-fluid form label .hide {
+  display: none;
+}
+
+.container-fluid form label .valid {
+  margin-left: 0.4rem;
+  font-size: 1rem;
+  color: #02ef02;
+}
+
+.container-fluid form label .invalid {
+  font-size: 1rem;
+  margin-left: 0.4rem;
+  color: red;
+}
+
+.container-fluid form .form-group {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.container-fluid form .form-group .offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.container-fluid form .form-group .instructions {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #2b2b2b;
+  color: white;
+  font-size: 0.6rem;
+  border-radius: 4px;
+}
+
+.container-fluid form .form-group input {
+  width: 100%;
+  border: 1px solid #2b2b2b;
+  background-color: transparent;
+  color: #2b2b2b;
+  font-size: 0.9rem;
+}
+
+.container-fluid form .form-group input:focus {
+  outline: none !important;
+}
+
+.container-fluid form .form-group input::-webkit-input-placeholder {
+  color: #2b2b2b;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.container-fluid form .form-group input:-ms-input-placeholder {
+  color: #2b2b2b;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.container-fluid form .form-group input::-ms-input-placeholder {
+  color: #2b2b2b;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.container-fluid form .form-group input::placeholder {
+  color: #2b2b2b;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.container-fluid form .btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0;
+  width: 100%;
+}
+
+.container-fluid form .footer-text {
+  margin: 1.5rem 0;
+  text-align: center;
+  color: #2b2b2b;
+  font-size: 0.9rem;
+}
+
+.container-fluid form .footer-text .footer-link {
+  color: #0254ee;
+  font-weight: 700;
+  text-decoration: none;
+}
+/*# sourceMappingURL=Style.css.map */

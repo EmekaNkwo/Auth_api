@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+@mixin flex-set {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: #e0e0e0 !important;
+  font-family: "Comfortaa", cursive !important;
+}
+
+.container-fluid {
+  @include flex-set();
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .icon-details {
+    margin-bottom: 1.5rem;
+
+    .icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  form {
+    margin: 0 2rem;
+    padding: 1.6rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 13px;
+    background: #e0e0e0;
+    box-shadow: 26px 26px 52px #bababa, -10px -10px 50px #ffffff;
+
+    h3 {
+      margin: 0.5rem 0 1rem 0;
+      text-align: center;
+      color: rgb(43, 43, 43);
+    }
+
+    label {
+      color: rgb(43, 43, 43);
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      .hide {
+        display: none;
+      }
+      .valid {
+        margin-left: 0.4rem;
+        font-size: 1rem;
+        color: rgb(2, 239, 2);
+      }
+      .invalid {
+        font-size: 1rem;
+        margin-left: 0.4rem;
+        color: rgb(255, 0, 0);
+      }
+    }
+
+    .form-group {
+      margin: 0.5rem 0;
+      width: 100%;
+
+      .offscreen {
+        position: absolute;
+        left: -9999px;
+      }
+
+      .instructions {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background-color: rgb(43, 43, 43);
+        color: rgb(255, 255, 255);
+        font-size: 0.6rem;
+        border-radius: 4px;
+      }
+    }
+
+    .form-group input {
+      width: 100%;
+      border: 1px solid rgb(43, 43, 43);
+      background-color: transparent;
+      color: rgb(43, 43, 43);
+      font-size: 0.9rem;
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &::placeholder {
+        color: rgb(43, 43, 43);
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+    }
+
+    .btn {
+      margin-top: 0.5rem;
+      padding: 0.6rem 0;
+      width: 100%;
+    }
+
+    .footer-text {
+      margin: 1.5rem 0;
+      text-align: center;
+      color: rgb(43, 43, 43);
+      font-size: 0.9rem;
+
+      .footer-link {
+        color: #0254ee;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@mixin buttonStyle {
+  padding: 0.7rem 2rem;
+  width: 100%;
+  text-align: center;
+  color: rgb(43, 43, 43);
+  border-radius: 13px;
+  background: #e0e0e0;
+  box-shadow: 26px 26px 52px #bababa, -26px -26px 52px #ffffff;
+  &:hover {
+    background-color: #0254ee;
+    color: #fff;
+  }
+}
+
+.home {
+  background-color: #e0e0e0 !important;
+  height: 100vh;
+  width: 100%;
+}
+
+.display {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(226, 162, 14);
+    transition: 0.4s;
+  }
+
+  .link-btn {
+    @include buttonStyle();
+  }
+}
