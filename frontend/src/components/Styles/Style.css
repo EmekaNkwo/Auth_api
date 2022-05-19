@@ -22,6 +22,10 @@ body {
           transform: translate(-50%, -50%);
 }
 
+.container-fluid a {
+  text-decoration: none;
+}
+
 .container-fluid .icon-details {
   margin-bottom: 1.5rem;
 }

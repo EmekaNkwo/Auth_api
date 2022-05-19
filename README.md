@@ -18,6 +18,12 @@ You're sections headers will be used to reference location of destination.
 
 This is a Sign In / Register App integrated with a NODEJS API to store User information, Express and MongoDB database.
 
+FEATURES OF APP
+
+- Full Validation on the Registration and Login
+- Hashed Password in the Database
+- JWT implemented
+
 Development in Progress
 
 #### Technologies
