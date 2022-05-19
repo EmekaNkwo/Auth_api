@@ -94,26 +94,15 @@ function Register() {
     }
   };
 
-  const logout = () => {
-    setSuccess(false);
-    setEmail("");
-    setPwd("");
-    setMatchPwd("");
-  };
-
   return (
     <section className="container-fluid">
       {success ? (
         <div className="alert alert-success">
-          <strong>Success!</strong> You have logged in successfully.
+          <strong>Success!</strong> Account Created Successfully.
           <br />
-          <button
-            type="submit"
-            className="btn mt-3 btn-primary"
-            onClick={logout}
-          >
-            LogOut
-          </button>
+          <Link className="footer-link" to="../login">
+            Login
+          </Link>
         </div>
       ) : (
         <>

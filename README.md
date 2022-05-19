@@ -1,7 +1,5 @@
 # Sign In / Register App
 
-URL: nkwo-signing-app.netlify.app
-
 ---
 
 ### Table of Contents
@@ -18,13 +16,16 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-This is a Sign In / Register App
+This is a Sign In / Register App integrated with a NODEJS API to store User information, Express and MongoDB database.
 
 Development in Progress
 
 #### Technologies
 
 - ReactJs
+- NodeJs
+- ExpressJs
+- MongoDB
 - BootStrap
 - SCSS
 - React icons for Icons
@@ -41,10 +42,11 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the client side
+Open [http://localhost:3000](http://localhost:3000)
 
-The page will reload when you make changes.
+Runs the server app
+Open [http://localhost:3500](http://localhost:3000)
 
 ### `npm i bootstrap react-bootstrap`
 
