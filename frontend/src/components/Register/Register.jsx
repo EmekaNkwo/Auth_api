@@ -2,14 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Style.css";
 import { FaHome, FaTimes, FaCheck } from "react-icons/fa";
-import axios from "../../api/axios";
+import axios from "axios";
 
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 //endpoint for register in API
-const REGISTER_URL = "/api/user/register";
+const REGISTER_URL = "http://localhost:3500/user/register";
 
 function Register() {
   const userRef = useRef();
@@ -43,7 +43,7 @@ function Register() {
     setValidEmail(result);
   }, [email]);
 
-  // // For Validation for Password using the REGEX
+  // For Validation for Password using the REGEX
   useEffect(() => {
     const result = PWD_REGEX.test(pwd);
     console.log(result);
@@ -72,10 +72,9 @@ function Register() {
     try {
       const response = await axios.post(
         REGISTER_URL,
-        JSON.stringify({ email, pwd }),
+        JSON.stringify({ email: email, password: pwd }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
         }
       );
       console.log(response.data);
@@ -90,7 +89,7 @@ function Register() {
       } else {
         setErrMsg("Registration Failed");
       }
-
+      console.log(error);
       errRef.current.focus();
     }
   };

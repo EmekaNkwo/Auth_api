@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
@@ -25,9 +26,10 @@ mongoose.connect(
 
 //Middlewares
 app.use(express.json());
+app.use(cors());
 
 //Route Middlewares
-app.use("/api/user/", authRoute);
-app.use("/api/post/", postRoute);
+app.use("/user/", authRoute);
+app.use("/post/", postRoute);
 
 app.listen(3500, () => console.log("Server Running"));

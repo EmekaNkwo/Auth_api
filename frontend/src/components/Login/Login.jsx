@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
-import axios from "../../api/axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import "../Styles/Style.css";
 
-const LOGIN_URL = "/api/user/login";
+const LOGIN_URL = "http://localhost:3500/user/login";
 
 function Login() {
   const { setAuth } = useContext(AuthContext);
@@ -37,13 +37,10 @@ function Login() {
     try {
       const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify(
-          { email, pwd },
-          {
-            headers: { "Content-Type": "application/json" },
-            withCredentials: true,
-          }
-        )
+        JSON.stringify({ email: email, password: pwd }),
+        {
+          headers: { "Content-Type": "application/json" },
+        }
       );
       console.log(JSON.stringify(response?.data));
       const accessToken = response?.data.accessToken;
@@ -62,6 +59,7 @@ function Login() {
       } else {
         setErrorMesg("Login Failed");
       }
+      console.log(error);
       errRef.current.focus();
     }
   };
